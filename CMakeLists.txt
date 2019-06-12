@@ -132,6 +132,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
  add_executable(arm_out_node src/arm_out.cpp)
+ add_executable(arm_up_node src/arm_up.cpp)
  add_executable(torso_up_node  src/torso_up.cpp)
 
 ## Rename C++ executable without prefix
@@ -146,6 +147,9 @@ include_directories(
 
 ## Specify libraries to link a library or executable target against
  target_link_libraries(arm_out_node
+   ${catkin_LIBRARIES}
+ )
+ target_link_libraries(arm_up_node
    ${catkin_LIBRARIES}
  )
  target_link_libraries(torso_up_node
